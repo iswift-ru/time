@@ -27,7 +27,7 @@ class _SelectTimeState extends State<SelectTime> {
         body: Column(
           children: <Widget>[
             //headerApp(),
-            underHeader(),
+            setCurrentTimeButton(),
             Expanded(
                 child: Container(
               child: hourMinute15Interval(),
@@ -107,7 +107,7 @@ class _SelectTimeState extends State<SelectTime> {
   );
 }*/
 
-Widget underHeader() {
+Widget setCurrentTimeButton() {
   return GestureDetector(
       onTap: () {},
       child: Container(
