@@ -299,7 +299,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
 
   Widget colon() {
     return Padding(
-      padding: const EdgeInsets.only(top: 120.0),
+      padding: const EdgeInsets.only(top: 98.0),
       child: Center(
         child: Column(
           children: <Widget>[
@@ -336,7 +336,7 @@ class _TimePickerSpinnerState extends State<TimePickerSpinner> {
               if (segment == 0) {
                 onUpdateSelectedIndex(selectedIndex + max);
                 controller.jumpTo(controller.offset + (max * _getItemHeight()));
-              } else if (segment ==2) {
+              } else if (segment == 2) {
                 onUpdateSelectedIndex(selectedIndex - max);
                 controller.jumpTo(controller.offset - (max * _getItemHeight()));
               }
