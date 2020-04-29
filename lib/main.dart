@@ -22,6 +22,26 @@ class SelectTime extends StatefulWidget {
 class _SelectTimeState extends State<SelectTime> {
   @override
   Widget build(BuildContext context) {
+    Widget setCurrentTimeButton() {
+      return GestureDetector(
+          onTap: () {
+            setState(() {
+              _dateTime = DateTime.now(); // обновляется только время в шапке
+            });
+          },
+          child: Container(
+            color: Colors.white,
+            alignment: Alignment.center,
+            height: 60,
+            width: double.infinity,
+            child: Text(
+              'DABAR',
+              style: TextStyle(
+                  fontSize: 14, color: Color(0xFF00539C), letterSpacing: 0.75),
+            ),
+          ));
+    }
+
     Widget hourMinute15Interval() {
       return TimePickerSpinner(
         highlightedTextStyle:
@@ -39,28 +59,10 @@ class _SelectTimeState extends State<SelectTime> {
         onTimeChange: (time) {
           setState(() {
             _dateTime = time;
+            print(time);
           });
         },
       );
-    }
-
-    Widget setCurrentTimeButton() {
-      return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SelectTime()));
-          },
-          child: Container(
-            color: Colors.white,
-            alignment: Alignment.center,
-            height: 60,
-            width: double.infinity,
-            child: Text(
-              'DABAR',
-              style: TextStyle(
-                  fontSize: 14, color: Color(0xFF00539C), letterSpacing: 0.75),
-            ),
-          ));
     }
 
     return Scaffold(
