@@ -26,7 +26,7 @@ class _SelectTimeState extends State<SelectTime> {
       return GestureDetector(
           onTap: () {
             setState(() {
-              _dateTime = DateTime.now(); // обновляется только время в шапке
+              _dateTime = DateTime.now(); // обновляется только время в шапке, в спинере нет
             });
           },
           child: Container(
